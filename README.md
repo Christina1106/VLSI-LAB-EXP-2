@@ -50,10 +50,123 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 
 VERILOG CODE
 
-   <<< TYPE YOUR VERILOG CODE >>>
+Exp2_Decoder3to8.v
 
-OUTPUT WAVEFORM
- <<< PASTE YOUR OUTPUT WAVEFORM >>>
+module decoder_3to8(
+input [2:0]a,
+output [7:0]d);
+assign d[0]=(~a[2])&(~a[1])&(~a[0]);
+assign d[1]=(~a[2])&(~a[1])&(a[0]);
+assign d[2]=(~a[2])&(a[1])&(~a[0]);
+assign d[3]=(~a[2])&(a[1])&(a[0]);
+assign d[4]=(a[2])&(~a[1])&(~a[0]);
+assign d[5]=(a[2])&(~a[1])&(a[0]);
+assign d[6]=(a[2])&(a[1])&(~a[0]);
+assign d[7]=(a[2])&(a[1])&(a[0]);
+endmodule
+xor G2(S, w1, Ci);
+and G3(w2, w1, Ci);
+and G4(w3, X, Y);
+or G5(Co, w2, w3);
+endmodule
+
+
+![Screenshot 2024-04-08 010102](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/a1031021-fdfa-4bda-8dc7-33e8a32f973b)
+
+
+
+Exp2_Demultiplexer1to8.v
+
+module demux_1_8(y,s,a);
+output reg [7:0]y;
+input [2:0]s;
+input a;
+always @(*)
+begin
+y = 0;
+case(s)
+3'd0:y[0]=a;
+3'd1:y[1]=a;
+3'd2:y[2]=a;
+3'd3:y[3]=a;
+3'd4:y[4]=a;
+3'd5:y[5]=a;
+3'd6:y[6]=a;
+3'd7:y[7]=a;
+endcase
+end
+endmodule
+
+![Screenshot 2024-04-07 225836](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/2c85cb4f-d9f2-4203-9053-b0bb6528e549)
+![Screenshot 2024-04-07 225929](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/f6bdedee-0b96-4b15-a383-2d357ce8fc65)
+
+
+Exp2_Encoder8to3.v
+
+module encoder_8_to_3(a0,a1,a2,d0,d1,d2,d3,d4,d5,d6,d7); 
+input d0,d1,d2, d3,d4,d5,d6,d7;
+output a0, a1,a2;
+assign a0 (d1 | d3 | d5 | d7);
+assign a1=(d2 | d3 | d6 | d7);
+assign a2 = (d4 | d6 | d5 | d7);
+endmodule
+
+
+Exp2_Magnitudecomparator.v
+
+module comparator(a,b,eq,lt,gt);
+input [3:0] a,b;
+output reg eq,lt,gt;
+always @(a,b)
+begin
+if (a==b)
+begin
+eq = 1'b1;
+lt = 1'b0;
+gt = 1'b0;
+end
+else if (a>b)
+begin
+eq = 1'b0;
+lt = 1'b0;
+gt = 1'b1;
+end
+begin
+eq = 1'b0;
+lt = 1'b1;
+gt = 1'b0;
+end
+end
+endmodule
+
+![Screenshot 2024-04-07 232645](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/405455dd-ef9e-4eb8-acfd-43a5de31aeef)
+
+
+Exp2_Multiplexer8to1.v
+
+module mux_8tol (in, sel, out);
+input [7:0] in: input [2:0] sel;
+output reg out;
+always @(*)
+begin
+case (sel)
+3'b000: out = in[0];
+3'b001: out = in[1];
+3'b010: out = in[2];
+3'b011: out = in[3];
+3'b100: out = in[4];
+3'b101: out = in[5];
+3'b110: out = in[6];
+3'b111: out = in[7];
+default: out = 1'bx;
+endcase
+end
+endmodule
+
+![Screenshot 2024-04-07 222858](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/8234cefe-2b7c-41ee-822e-6c8d73593b0c)
+![Screenshot 2024-04-07 223310](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/8b94b474-fdc1-4b76-b700-25a8e8996ee4)
+
+
 
 RESULT
 
