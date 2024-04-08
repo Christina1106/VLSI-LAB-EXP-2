@@ -6,18 +6,18 @@ begin
 if (a==b)
 begin
 eq = 1'b1;
-It = 1'b0;
+lt = 1'b0;
 gt = 1'b0;
 end
 else if (a>b)
 begin
 eq = 1'b0;
-It = 1'b0;
+lt = 1'b0;
 gt = 1'b1;
 end
 begin
 eq = 1'b0;
-It = 1'b1;
+lt = 1'b1;
 gt = 1'b0;
 end
 end
