@@ -71,7 +71,11 @@ or G5(Co, w2, w3);
 endmodule
 ```
 
-![Screenshot 2024-04-08 010102](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/a1031021-fdfa-4bda-8dc7-33e8a32f973b)
+ Simulation:
+ ![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-2/assets/164840481/3fc6dd17-f3c9-48ef-b0ab-97114fcbe077)
+Elaborated Design:
+
+![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-2/assets/164840481/d80ec41e-50bf-422e-9701-9eecebb1bf26)
 
 
 
