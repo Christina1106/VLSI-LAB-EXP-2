@@ -51,7 +51,7 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 VERILOG CODE
 
 Exp2_Decoder3to8.v
-
+```
 module decoder_3to8(
 input [2:0]a,
 output [7:0]d);
@@ -69,14 +69,14 @@ and G3(w2, w1, Ci);
 and G4(w3, X, Y);
 or G5(Co, w2, w3);
 endmodule
-
+```
 
 ![Screenshot 2024-04-08 010102](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/a1031021-fdfa-4bda-8dc7-33e8a32f973b)
 
 
 
 Exp2_Demultiplexer1to8.v
-
+```
 module demux_1_8(y,s,a);
 output reg [7:0]y;
 input [2:0]s;
@@ -96,13 +96,13 @@ case(s)
 endcase
 end
 endmodule
-
+```
 ![Screenshot 2024-04-07 225836](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/2c85cb4f-d9f2-4203-9053-b0bb6528e549)
 ![Screenshot 2024-04-07 225929](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/f6bdedee-0b96-4b15-a383-2d357ce8fc65)
 
 
 Exp2_Encoder8to3.v
-
+```
 module encoder_8_to_3(a0,a1,a2,d0,d1,d2,d3,d4,d5,d6,d7); 
 input d0,d1,d2, d3,d4,d5,d6,d7;
 output a0, a1,a2;
@@ -110,10 +110,13 @@ assign a0 (d1 | d3 | d5 | d7);
 assign a1=(d2 | d3 | d6 | d7);
 assign a2 = (d4 | d6 | d5 | d7);
 endmodule
+```
+![Screenshot 2024-04-21 225422](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/8df21f28-e407-4105-ad9f-29f23197a682)
+![image](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/4e2cd811-6e7c-46ec-af90-223a7283081c)
 
 
 Exp2_Magnitudecomparator.v
-
+```
 module comparator(a,b,eq,lt,gt);
 input [3:0] a,b;
 output reg eq,lt,gt;
@@ -138,14 +141,15 @@ gt = 1'b0;
 end
 end
 endmodule
-
+```
 ![Screenshot 2024-04-07 232645](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/405455dd-ef9e-4eb8-acfd-43a5de31aeef)
-![Uploading Screenshot 2024-04-21 204953.png…]()
+![Screenshot 2024-04-21 204953](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/492bc624-78cd-4af5-a82d-cb61e585f19c)
+
 
 
 
 Exp2_Multiplexer8to1.v
-
+```
 module mux_8tol (in, sel, out);
 input [7:0] in: input [2:0] sel;
 output reg out;
@@ -164,7 +168,7 @@ default: out = 1'bx;
 endcase
 end
 endmodule
-
+```
 ![Screenshot 2024-04-07 222858](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/8234cefe-2b7c-41ee-822e-6c8d73593b0c)
 ![Screenshot 2024-04-07 223310](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/8b94b474-fdc1-4b76-b700-25a8e8996ee4)
 
