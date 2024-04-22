@@ -15,6 +15,7 @@ eq = 1'b0;
 lt = 1'b0;
 gt = 1'b1;
 end
+else
 begin
 eq = 1'b0;
 lt = 1'b1;
