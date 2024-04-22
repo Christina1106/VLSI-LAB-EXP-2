@@ -140,6 +140,8 @@ end
 endmodule
 
 ![Screenshot 2024-04-07 232645](https://github.com/Christina1106/VLSI-LAB-EXP-2/assets/161043650/405455dd-ef9e-4eb8-acfd-43a5de31aeef)
+![Uploading Screenshot 2024-04-21 204953.png…]()
+
 
 
 Exp2_Multiplexer8to1.v
